@@ -35,10 +35,10 @@ bench = false
 
 name = "petgraph"
 
-[profile.release]
+# [profile.release]
 
-[profile.bench]
-debug = true
+# [profile.bench]
+# debug = true
 
 [dependencies]
 fixedbitset = { workspace=true, version = "0.5.7" }
