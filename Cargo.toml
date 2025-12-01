@@ -45,8 +45,8 @@ fixedbitset = { workspace=true, version = "0.5.7" }
 indexmap = { workspace=true, version = "2.5.0" }
 hashbrown = { workspace=true, version = "^0.15.0",  features = ["default-hasher", "inline-more"] }
 quickcheck = { workspace=true,  version = "0.8" }
-serde = { workspace=true, version = "1.0" }
-serde_derive = { workspace=true, version = "1.0" }
+serde = { workspace=true, version = "1.0", optional = true }
+serde_derive = { workspace=true, version = "1.0", optional = true }
 rayon = { workspace=true, version = "1.5.3" }
 dot-parser = { workspace=true, version = "0.5.1" }
 dot-parser-macros = { workspace=true, version = "0.5.1"  }
@@ -88,7 +88,7 @@ quickcheck = [
 #"std", "dep:quickcheck", "graphmap", "stable_graph"
 ]
 serde-1 = [
-#"serde", "serde_derive"
+"serde", "serde_derive"
 ]
 stable_graph = [
 #"serde?/alloc"
