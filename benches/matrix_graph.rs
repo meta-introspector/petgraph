@@ -6,7 +6,7 @@ extern crate test;
 use test::Bencher;
 
 use petgraph::algo;
-use petgraph::matrix_graph::{node_index, MatrixGraph};
+use petgraph::matrix_graph::{MatrixGraph, node_index};
 use petgraph::{Directed, EdgeType, Incoming, Outgoing};
 
 #[bench]

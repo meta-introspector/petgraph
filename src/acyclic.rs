@@ -9,18 +9,18 @@ use core::{
 };
 
 use crate::{
+    Direction,
     adj::IndexType,
     algo::Cycle,
     data::{Build, Create, DataMap, DataMapMut},
     graph::NodeIndex,
     prelude::DiGraph,
     visit::{
-        dfs_visitor, Control, Data, DfsEvent, EdgeCount, EdgeIndexable, GetAdjacencyMatrix,
-        GraphBase, GraphProp, IntoEdgeReferences, IntoEdges, IntoEdgesDirected, IntoNeighbors,
+        Control, Data, DfsEvent, EdgeCount, EdgeIndexable, GetAdjacencyMatrix, GraphBase,
+        GraphProp, IntoEdgeReferences, IntoEdges, IntoEdgesDirected, IntoNeighbors,
         IntoNeighborsDirected, IntoNodeIdentifiers, IntoNodeReferences, NodeCompactIndexable,
-        NodeCount, NodeIndexable, Reversed, Time, Visitable,
+        NodeCount, NodeIndexable, Reversed, Time, Visitable, dfs_visitor,
     },
-    Direction,
 };
 
 #[cfg(feature = "stable_graph")]
@@ -883,8 +883,8 @@ mod tests {
     #[cfg(feature = "graphmap")]
     #[test]
     fn test_multiedge_allowed() {
-        use crate::prelude::GraphMap;
         use crate::Directed;
+        use crate::prelude::GraphMap;
 
         let mut graph = Acyclic::<GraphMap<usize, (), Directed>>::new();
         graph.add_node(0);

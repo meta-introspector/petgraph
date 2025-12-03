@@ -15,14 +15,14 @@ use core::{
 
 use hashbrown::HashSet;
 use indexmap::{
-    map::{Iter as IndexMapIter, IterMut as IndexMapIterMut, Keys},
     IndexMap,
+    map::{Iter as IndexMapIter, IterMut as IndexMapIterMut, Keys},
 };
 
 use crate::{
-    data,
-    graph::{node_index, Graph},
-    visit, Directed, Direction, EdgeType, Incoming, IntoWeightedEdge, Outgoing, Undirected,
+    Directed, Direction, EdgeType, Incoming, IntoWeightedEdge, Outgoing, Undirected, data,
+    graph::{Graph, node_index},
+    visit,
 };
 
 #[cfg(feature = "std")]

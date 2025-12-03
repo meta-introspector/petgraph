@@ -4,9 +4,9 @@ use core::ops::{Index, IndexMut};
 use hashbrown::HashMap;
 
 use crate::{
+    Directed,
     graph::{GraphIndex, NodeIndex},
     visit::{EdgeRef, GraphProp, IntoEdgeReferences},
-    Directed,
 };
 
 use self::linked_list::{LinkedList, LinkedListEntry};

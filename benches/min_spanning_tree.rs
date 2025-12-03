@@ -10,9 +10,9 @@ mod common;
 use common::{digraph, ungraph};
 
 use petgraph::{
+    Graph, Undirected,
     algo::{min_spanning_tree, min_spanning_tree_prim},
     visit::{Data, IntoEdgeReferences, IntoEdges, IntoNodeReferences, NodeIndexable},
-    Graph, Undirected,
 };
 
 #[bench]

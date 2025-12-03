@@ -1,8 +1,8 @@
 #[cfg(feature = "stable_graph")]
 #[cfg(test)]
 use petgraph::{
-    graph::{NodeIndex, UnGraph},
     Graph, Undirected,
+    graph::{NodeIndex, UnGraph},
 };
 
 #[cfg(feature = "stable_graph")]

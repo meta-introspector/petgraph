@@ -1,7 +1,7 @@
 //! Shortest Path Faster Algorithm.
 use alloc::collections::VecDeque;
 
-use super::{bellman_ford::Paths, BoundedMeasure, NegativeCycle};
+use super::{BoundedMeasure, NegativeCycle, bellman_ford::Paths};
 use crate::prelude::*;
 use crate::visit::{IntoEdges, IntoNodeIdentifiers, NodeIndexable};
 use alloc::{vec, vec::Vec};

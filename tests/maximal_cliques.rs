@@ -3,10 +3,10 @@ use core::hash::Hash;
 use hashbrown::HashSet;
 use petgraph::graph::{DiGraph, UnGraph};
 use petgraph::{
+    Undirected,
     algo::maximal_cliques,
     graph::Graph,
     visit::{GetAdjacencyMatrix, IntoNeighbors, IntoNodeIdentifiers},
-    Undirected,
 };
 
 /// (reference implementation)

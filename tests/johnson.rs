@@ -3,7 +3,7 @@ use core::hash::Hash;
 use hashbrown::HashMap;
 use petgraph::algo::johnson;
 use petgraph::visit::GraphBase;
-use petgraph::{prelude::*, Directed, Graph, Undirected};
+use petgraph::{Directed, Graph, Undirected, prelude::*};
 
 #[cfg(feature = "rayon")]
 use petgraph::algo::parallel_johnson;

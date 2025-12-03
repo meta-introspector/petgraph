@@ -7,10 +7,10 @@ use alloc::{
 };
 
 use crate::{
+    Graph, Undirected,
     csr::Csr,
     graph::IndexType,
     visit::{GetAdjacencyMatrix, IntoNodeIdentifiers},
-    Graph, Undirected,
 };
 
 #[cfg(feature = "graphmap")]

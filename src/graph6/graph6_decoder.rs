@@ -6,7 +6,7 @@ use alloc::{
     vec::Vec,
 };
 
-use crate::{csr::Csr, graph::IndexType, Graph, Undirected};
+use crate::{Graph, Undirected, csr::Csr, graph::IndexType};
 
 #[cfg(feature = "graphmap")]
 use crate::graphmap::GraphMap;

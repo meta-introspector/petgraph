@@ -4,7 +4,7 @@ extern crate petgraph;
 extern crate test;
 
 use core::cmp::max;
-use petgraph::algo::{toposort, DfsSpace};
+use petgraph::algo::{DfsSpace, toposort};
 use petgraph::prelude::*;
 use petgraph::{acyclic::Acyclic, data::Build};
 use test::Bencher;

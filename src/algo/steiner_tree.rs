@@ -3,15 +3,15 @@ use core::{fmt::Debug, hash::Hash};
 
 use hashbrown::{HashMap, HashSet};
 
+use crate::Undirected;
 use crate::algo::floyd_warshall::floyd_warshall_path;
-use crate::algo::{dijkstra, min_spanning_tree, BoundedMeasure, Measure};
+use crate::algo::{BoundedMeasure, Measure, dijkstra, min_spanning_tree};
 use crate::data::FromElements;
 use crate::graph::{IndexType, NodeIndex, UnGraph};
 use crate::visit::{
     Data, EdgeRef, GraphBase, GraphProp, IntoEdgeReferences, IntoEdges, IntoNeighbors,
     IntoNodeIdentifiers, IntoNodeReferences, NodeCompactIndexable, NodeIndexable, Visitable,
 };
-use crate::Undirected;
 
 #[cfg(feature = "stable_graph")]
 use crate::stable_graph::StableGraph;
@@ -219,9 +219,9 @@ mod test {
     use super::{compute_metric_closure, non_terminal_leaves, subgraph_edges_from_metric_closure};
     use crate::graph::NodeIndex;
     use crate::{
-        algo::{min_spanning_tree, EdgeRef, UnGraph},
-        data::FromElements,
         Graph, Undirected,
+        algo::{EdgeRef, UnGraph, min_spanning_tree},
+        data::FromElements,
     };
 
     #[test]

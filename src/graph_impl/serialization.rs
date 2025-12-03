@@ -1,15 +1,15 @@
 use alloc::vec::Vec;
 use core::marker::PhantomData;
 
-use serde::{de::Error, Deserialize, Deserializer, Serialize, Serializer};
+use serde::{Deserialize, Deserializer, Serialize, Serializer, de::Error};
 
 use super::{EdgeIndex, NodeIndex};
+use crate::EdgeType;
 use crate::graph::{Edge, IndexType, Node};
 use crate::prelude::*;
 use crate::serde_utils::{
     CollectSeqWithLength, FromDeserialized, IntoSerializable, MappedSequenceVisitor,
 };
-use crate::EdgeType;
 
 /// Serialization representation for Graph
 /// Keep in sync with deserialization and StableGraph

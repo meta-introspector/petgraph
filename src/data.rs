@@ -2,10 +2,10 @@
 
 use alloc::vec::Vec;
 
-use crate::graph::IndexType;
-use crate::visit::{Data, NodeCount, NodeIndexable, Reversed};
 use crate::EdgeType;
 use crate::Graph;
+use crate::graph::IndexType;
+use crate::visit::{Data, NodeCount, NodeIndexable, Reversed};
 
 #[cfg(feature = "stable_graph")]
 use crate::stable_graph::StableGraph;

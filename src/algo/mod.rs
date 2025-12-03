@@ -40,13 +40,13 @@ use alloc::{vec, vec::Vec};
 
 use crate::prelude::*;
 
+use super::EdgeType;
 use super::graph::IndexType;
 use super::unionfind::UnionFind;
 use super::visit::{
     GraphBase, GraphRef, IntoEdgeReferences, IntoNeighbors, IntoNeighborsDirected,
     IntoNodeIdentifiers, NodeCompactIndexable, NodeIndexable, Reversed, VisitMap, Visitable,
 };
-use super::EdgeType;
 use crate::visit::Walker;
 
 pub use astar::astar;
@@ -62,7 +62,7 @@ pub use isomorphism::{
 };
 pub use johnson::johnson;
 pub use k_shortest_path::k_shortest_path;
-pub use matching::{greedy_matching, maximum_matching, Matching};
+pub use matching::{Matching, greedy_matching, maximum_matching};
 pub use maximal_cliques::maximal_cliques;
 pub use maximum_flow::{dinics, ford_fulkerson};
 pub use min_spanning_tree::{min_spanning_tree, min_spanning_tree_prim};
@@ -71,7 +71,7 @@ pub use page_rank::page_rank;
 pub use scc::scc;
 pub use scc::{
     kosaraju_scc::kosaraju_scc,
-    tarjan_scc::{tarjan_scc, TarjanScc},
+    tarjan_scc::{TarjanScc, tarjan_scc},
 };
 pub use simple_paths::{all_simple_paths, all_simple_paths_multi};
 pub use spfa::spfa;
@@ -285,7 +285,7 @@ pub fn is_cyclic_directed<G>(g: G) -> bool
 where
     G: IntoNodeIdentifiers + IntoNeighbors + Visitable,
 {
-    use crate::visit::{depth_first_search, DfsEvent};
+    use crate::visit::{DfsEvent, depth_first_search};
 
     depth_first_search(g, g.node_identifiers(), |event| match event {
         DfsEvent::BackEdge(_, _) => Err(()),
@@ -686,7 +686,9 @@ macro_rules! impl_bounded_measure_integer(
     };
 );
 
-impl_bounded_measure_integer!(u8, u16, u32, u64, u128, usize, i8, i16, i32, i64, i128, isize);
+impl_bounded_measure_integer!(
+    u8, u16, u32, u64, u128, usize, i8, i16, i32, i64, i128, isize
+);
 
 macro_rules! impl_bounded_measure_float(
     ( $( $t:ident ),* ) => {

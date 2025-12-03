@@ -1,11 +1,12 @@
 use alloc::vec::Vec;
 use core::marker::PhantomData;
 
-use serde::{de::Error, Deserialize, Deserializer, Serialize, Serializer};
+use serde::{Deserialize, Deserializer, Serialize, Serializer, de::Error};
 
 use super::super::serialization::{
-    invalid_hole_err, invalid_length_err, invalid_node_err, EdgeProperty,
+    EdgeProperty, invalid_hole_err, invalid_length_err, invalid_node_err,
 };
+use crate::EdgeType;
 use crate::graph::{Edge, IndexType, Node};
 use crate::prelude::*;
 use crate::serde_utils::{
@@ -13,7 +14,6 @@ use crate::serde_utils::{
 };
 use crate::stable_graph::StableGraph;
 use crate::visit::{EdgeIndexable, NodeIndexable};
-use crate::EdgeType;
 
 // Serialization representation for StableGraph
 // Keep in sync with deserialization and Graph

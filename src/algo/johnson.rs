@@ -6,8 +6,8 @@ use core::ops::Sub;
 
 use hashbrown::HashMap;
 
-use super::{dijkstra, spfa::spfa_loop};
 pub use super::{BoundedMeasure, NegativeCycle};
+use super::{dijkstra, spfa::spfa_loop};
 use crate::visit::{EdgeRef, IntoEdges, IntoNodeIdentifiers, NodeIndexable, Visitable};
 
 #[cfg(feature = "rayon")]

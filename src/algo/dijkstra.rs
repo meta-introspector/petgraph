@@ -5,10 +5,10 @@ use hashbrown::hash_map::{
     HashMap,
 };
 
+use crate::Direction;
 use crate::algo::Measure;
 use crate::scored::MinScored;
 use crate::visit::{EdgeRef, IntoEdges, IntoEdgesDirected, VisitMap, Visitable};
-use crate::Direction;
 
 /// Dijkstra's shortest path algorithm.
 ///

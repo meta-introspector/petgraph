@@ -1,6 +1,6 @@
 //! Operators for creating new graphs from existing ones.
-use super::graph::{Graph, IndexType};
 use super::EdgeType;
+use super::graph::{Graph, IndexType};
 use crate::visit::IntoNodeReferences;
 
 /// \[Generic\] complement of the graph

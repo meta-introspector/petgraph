@@ -15,7 +15,7 @@
 use alloc::{vec, vec::Vec};
 use core::{cmp::Ordering, hash::Hash};
 
-use hashbrown::{hash_map::Iter, HashMap, HashSet};
+use hashbrown::{HashMap, HashSet, hash_map::Iter};
 
 use crate::visit::{DfsPostOrder, GraphBase, IntoNeighbors, Visitable, Walker};
 

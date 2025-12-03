@@ -1,9 +1,9 @@
+use crate::Direction;
 use crate::visit::{
     Data, EdgeRef, GraphBase, GraphProp, GraphRef, IntoEdgeReferences, IntoEdges,
     IntoEdgesDirected, IntoNeighbors, IntoNeighborsDirected, IntoNodeIdentifiers,
     IntoNodeReferences, NodeCompactIndexable, NodeCount, NodeIndexable, Visitable,
 };
-use crate::Direction;
 
 /// An edge direction removing graph adaptor.
 #[derive(Copy, Clone, Debug)]

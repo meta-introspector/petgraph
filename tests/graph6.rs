@@ -1,7 +1,7 @@
 use petgraph::{
-    csr::Csr,
-    graph6::{from_graph6_representation, get_graph6_representation, FromGraph6, ToGraph6},
     Graph, Undirected,
+    csr::Csr,
+    graph6::{FromGraph6, ToGraph6, from_graph6_representation, get_graph6_representation},
 };
 
 #[cfg(feature = "graphmap")]

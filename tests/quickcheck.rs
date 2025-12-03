@@ -27,19 +27,20 @@ use itertools::cloned;
 use quickcheck::{Arbitrary, Gen};
 use rand::Rng;
 
+use petgraph::EdgeType;
 #[cfg(feature = "stable_graph")]
 use petgraph::algo::steiner_tree;
 use petgraph::algo::{
-    astar, bellman_ford, bidirectional_dijkstra, bridges, condensation, connected_components,
-    dijkstra, dsatur_coloring, find_negative_cycle, floyd_warshall, ford_fulkerson,
-    greedy_feedback_arc_set, greedy_matching, is_cyclic_directed, is_cyclic_undirected,
-    is_isomorphic, is_isomorphic_matching, johnson, k_shortest_path, kosaraju_scc,
-    maximal_cliques as maximal_cliques_algo, maximum_matching, min_spanning_tree, page_rank, spfa,
-    tarjan_scc, toposort, Matching,
+    Matching, astar, bellman_ford, bidirectional_dijkstra, bridges, condensation,
+    connected_components, dijkstra, dsatur_coloring, find_negative_cycle, floyd_warshall,
+    ford_fulkerson, greedy_feedback_arc_set, greedy_matching, is_cyclic_directed,
+    is_cyclic_undirected, is_isomorphic, is_isomorphic_matching, johnson, k_shortest_path,
+    kosaraju_scc, maximal_cliques as maximal_cliques_algo, maximum_matching, min_spanning_tree,
+    page_rank, spfa, tarjan_scc, toposort,
 };
 use petgraph::data::FromElements;
 use petgraph::dot::{Config, Dot};
-use petgraph::graph::{edge_index, node_index, IndexType};
+use petgraph::graph::{IndexType, edge_index, node_index};
 use petgraph::graphmap::NodeTrait;
 use petgraph::operator::complement;
 use petgraph::prelude::*;
@@ -47,7 +48,6 @@ use petgraph::visit::{
     EdgeFiltered, EdgeIndexable, IntoEdgeReferences, IntoEdges, IntoNeighbors, IntoNodeIdentifiers,
     IntoNodeReferences, NodeCount, NodeIndexable, Reversed, Topo, VisitMap, Visitable,
 };
-use petgraph::EdgeType;
 
 #[cfg(feature = "rayon")]
 use petgraph::algo::parallel_johnson;
@@ -1723,7 +1723,8 @@ fn maximal_cliques_matches_ref_impl() {
             let cliques = maximal_cliques_algo(&g);
             let cliques_ref = maximal_cliques_ref(&g);
 
-            assert!(cliques.len() == cliques_ref.len(),
+            assert!(
+                cliques.len() == cliques_ref.len(),
                 "Maximal cliques algo returned different number of cliques than the reference implementation: {} != {}",
                 cliques.len(),
                 cliques_ref.len()

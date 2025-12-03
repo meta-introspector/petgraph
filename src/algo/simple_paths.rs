@@ -1,15 +1,15 @@
 use alloc::vec;
 use core::{
     hash::{BuildHasher, Hash},
-    iter::{from_fn, FromIterator},
+    iter::{FromIterator, from_fn},
 };
 
 use hashbrown::HashSet;
 use indexmap::IndexSet;
 
 use crate::{
-    visit::{IntoNeighborsDirected, NodeCount},
     Direction::Outgoing,
+    visit::{IntoNeighborsDirected, NodeCount},
 };
 
 /// Calculate all simple paths with specified constraints from node `from` to node `to`.

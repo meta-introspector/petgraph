@@ -1,8 +1,8 @@
 use petgraph::{
+    Directed, EdgeType, Graph, Undirected,
     adj::List,
     csr::Csr,
     visit::{EdgeRef, GetAdjacencyMatrix, GraphProp, IntoEdgeReferences, IntoNodeIdentifiers},
-    Directed, EdgeType, Graph, Undirected,
 };
 
 #[cfg(feature = "graphmap")]

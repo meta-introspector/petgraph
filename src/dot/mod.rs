@@ -418,21 +418,30 @@ mod test {
     fn test_nodeindexlable_option() {
         let graph = simple_graph();
         let dot = format!("{:?}", Dot::with_config(&graph, &[Config::NodeIndexLabel]));
-        assert_eq!(dot, "digraph {\n    0 [ label = \"0\" ]\n    1 [ label = \"1\" ]\n    0 -> 1 [ label = \"\\\"edge_label\\\"\" ]\n}\n");
+        assert_eq!(
+            dot,
+            "digraph {\n    0 [ label = \"0\" ]\n    1 [ label = \"1\" ]\n    0 -> 1 [ label = \"\\\"edge_label\\\"\" ]\n}\n"
+        );
     }
 
     #[test]
     fn test_edgeindexlable_option() {
         let graph = simple_graph();
         let dot = format!("{:?}", Dot::with_config(&graph, &[Config::EdgeIndexLabel]));
-        assert_eq!(dot, "digraph {\n    0 [ label = \"\\\"A\\\"\" ]\n    1 [ label = \"\\\"B\\\"\" ]\n    0 -> 1 [ label = \"0\" ]\n}\n");
+        assert_eq!(
+            dot,
+            "digraph {\n    0 [ label = \"\\\"A\\\"\" ]\n    1 [ label = \"\\\"B\\\"\" ]\n    0 -> 1 [ label = \"0\" ]\n}\n"
+        );
     }
 
     #[test]
     fn test_edgenolable_option() {
         let graph = simple_graph();
         let dot = format!("{:?}", Dot::with_config(&graph, &[Config::EdgeNoLabel]));
-        assert_eq!(dot, "digraph {\n    0 [ label = \"\\\"A\\\"\" ]\n    1 [ label = \"\\\"B\\\"\" ]\n    0 -> 1 [ ]\n}\n");
+        assert_eq!(
+            dot,
+            "digraph {\n    0 [ label = \"\\\"A\\\"\" ]\n    1 [ label = \"\\\"B\\\"\" ]\n    0 -> 1 [ ]\n}\n"
+        );
     }
 
     #[test]
@@ -513,6 +522,9 @@ mod test {
                 &|_, nr| format!("label = \"{}\"", nr.weight().to_lowercase()),
             ),
         );
-        assert_eq!(dot, "digraph {\n    0 [ label = \"a\"]\n    1 [ label = \"b\"]\n    0 -> 1 [ label = \"EDGE_LABEL\"]\n}\n");
+        assert_eq!(
+            dot,
+            "digraph {\n    0 [ label = \"a\"]\n    1 [ label = \"b\"]\n    0 -> 1 [ label = \"EDGE_LABEL\"]\n}\n"
+        );
     }
 }

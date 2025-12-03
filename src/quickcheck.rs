@@ -4,9 +4,9 @@ use alloc::{boxed::Box, vec::Vec};
 
 use self::quickcheck::{Arbitrary, Gen};
 use crate::{
-    graph::{node_index, IndexType},
-    visit::NodeIndexable,
     EdgeType, Graph,
+    graph::{IndexType, node_index},
+    visit::NodeIndexable,
 };
 
 #[cfg(feature = "stable_graph")]

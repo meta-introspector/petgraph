@@ -14,7 +14,7 @@ use core::{
 
 use fixedbitset::FixedBitSet;
 
-use super::{index_twice, Edge, Frozen, GraphError, Node, Pair, DIRECTIONS};
+use super::{DIRECTIONS, Edge, Frozen, GraphError, Node, Pair, index_twice};
 use crate::iter_format::{DebugMap, IterFormatExt, NoPretty};
 use crate::iter_utils::IterUtilsExt;
 use crate::visit::{self, EdgeIndexable, EdgeRef, IntoEdgeReferences, NodeIndexable};
@@ -25,7 +25,7 @@ use crate::{
 // reexport those things that are shared with Graph
 #[doc(no_inline)]
 pub use crate::graph::{
-    edge_index, node_index, DefaultIx, EdgeIndex, GraphIndex, IndexType, NodeIndex,
+    DefaultIx, EdgeIndex, GraphIndex, IndexType, NodeIndex, edge_index, node_index,
 };
 
 #[cfg(feature = "serde-1")]
